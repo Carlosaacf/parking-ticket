@@ -1,7 +1,10 @@
 package com.api.parkingcontrol.services;
 
+import com.api.parkingcontrol.models.ParkingSpotModel;
 import com.api.parkingcontrol.repositorys.ParkingSpotRepository;
+import lombok.Data;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 @Service
 public class ParkingSpotService {
@@ -11,5 +14,9 @@ public class ParkingSpotService {
 
     public ParkingSpotService(ParkingSpotRepository parkingSpotRepository) {
         this.parkingSpotRepository = parkingSpotRepository;
+    }
+    @Transactional
+    public ParkingSpotModel save(ParkingSpotModel parkingSpotModel){
+        return parkingSpotRepository.save(parkingSpotModel);
     }
 }
