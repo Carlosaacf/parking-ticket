@@ -1,9 +1,12 @@
 package com.api.parkingcontrol.dto;
 
 
+import lombok.Data;
+
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
 
+@Data
 public class ParkingSpotDto {
 
     @NotBlank
@@ -23,4 +26,5 @@ public class ParkingSpotDto {
     private String apartment;
     @NotBlank
     private String block;
+
 }
